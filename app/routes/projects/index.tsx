@@ -3,6 +3,7 @@ import { useState } from "react";
 import ProjectCard from "~/components/ProjectCard";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Project, StrapiProject, StrapiResponse } from "~/types";
+import Pagination from "~/components/Pagination";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,7 +15,9 @@ export function meta({}: Route.MetaArgs) {
 export async function loader({
   request,
 }: Route.LoaderArgs): Promise<{ projects: Project[] }> {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/projects?populate=*`);
+  const res = await fetch(
+    `${import.meta.env.VITE_API_URL}/projects?populate=*`,
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch projects");
@@ -52,7 +55,7 @@ const ProjectsPage = ({ loaderData }: Route.ComponentProps) => {
     ...new Set(
       projects
         .map((p) => p.category)
-        .filter((category): category is string => Boolean(category?.trim()))
+        .filter((category): category is string => Boolean(category?.trim())),
     ),
   ];
 
@@ -65,24 +68,6 @@ const ProjectsPage = ({ loaderData }: Route.ComponentProps) => {
   const indexOfLast = currentPage * projectsPerPage;
   const indexOfFirst = indexOfLast - projectsPerPage;
   const currentProjects = filteredProjects.slice(indexOfFirst, indexOfLast);
-
-  const renderPagination = () => (
-    <div className="flex justify-center gap-2 mt-8">
-      {Array.from({ length: totalPages }, (_, idx) => (
-        <button
-          key={idx + 1}
-          onClick={() => setCurrentPage(idx + 1)}
-          className={`px-3 py-1 cursor-pointer rounded ${
-            currentPage === idx + 1
-              ? "bg-pink-600 text-white"
-              : "bg-gray-700 text-gray-200"
-          }`}
-        >
-          {idx + 1}
-        </button>
-      ))}
-    </div>
-  );
 
   return (
     <>
@@ -117,7 +102,12 @@ const ProjectsPage = ({ loaderData }: Route.ComponentProps) => {
         </motion.div>
       </AnimatePresence>
 
-      {renderPagination()}
+      {/* {renderPagination()} */}
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+      />
     </>
   );
 };

@@ -1,5 +1,9 @@
 import { Link } from "react-router";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import BlinkingBar from "./BlinkingBar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import DownloadIcon from "@mui/icons-material/Download";
 
 type HeroProps = {
   name?: string;
@@ -17,21 +21,18 @@ const Hero = ({
   return (
     <header className="bg-gray-900 text-white">
       <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-7 items-center">
           <div className="text-center md:text-left">
             <p className="text-pink-400 font-medium mb-3">Hello, I’m</p>
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
-              {name}
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 flex items-end justify-center md:justify-start gap-1">
+              <span>{name}</span>
+              <BlinkingBar />
             </h1>
 
-            <h2 className="text-2xl md:text-3xl text-gray-300 mb-4">
-              {title}
-            </h2>
+            <h2 className="text-2xl md:text-3xl text-gray-300 mb-4">{title}</h2>
 
-            <p className="text-lg text-gray-400 max-w-xl mb-8">
-              {text}
-            </p>
+            <p className="text-lg text-gray-400 max-w-xl mb-8">{text}</p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
               <a
@@ -70,6 +71,17 @@ const Hero = ({
                 Contact Me
               </Link>
             </div>
+            <Box sx={{ mt: 1 }}>
+              <Button
+                href={`${import.meta.env.BASE_URL}PDF_Files/resume.pdf`}
+                target="_blank"
+                variant="contained"
+                color="success"
+                endIcon={<DownloadIcon />}
+              >
+                Download Resume
+              </Button>
+            </Box>
           </div>
 
           <div className="flex justify-center md:justify-end">

@@ -9,7 +9,7 @@ const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   onPageChange,
 }) => {
-  if (totalPages <= 1) return null; // Don't render if only one page
+  if (totalPages <= 1) return null; 
 
   return (
     <div className='flex justify-center gap-2 mt-8'>
@@ -19,7 +19,7 @@ const Pagination: React.FC<PaginationProps> = ({
           onClick={() => onPageChange(idx + 1)}
           className={`px-3 py-1 cursor-pointer rounded ${
             currentPage === idx + 1
-              ? 'bg-blue-600 text-white'
+              ? 'bg-pink-600 text-white'
               : 'bg-gray-700 text-gray-200'
           }`}
         >
