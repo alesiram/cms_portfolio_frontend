@@ -64,8 +64,7 @@ const AboutSection = () => {
     {
       year: "2024",
       label: "B.S. Computer Science · Oregon State University",
-      detail:
-        "Graduated with a 3.71 GPA while working full-time.",
+      detail: "Graduated with a 3.71 GPA while working full-time.",
       color: "bg-purple-500",
     },
     {
@@ -98,9 +97,11 @@ const AboutSection = () => {
               After working in the research and nonprofit sector in data
               administration, collection, management, and analysis, I decided to
               go back to college and earn a second bachelor's degree in Computer
-              Science. I wanted to challenge myself, learn technical skills, and
-              build the tools I had always worked around. Now I'm focused on
-              growing as a developer and landing my first role in tech.
+              Science. I am now an aspiring developer. I enjoy learning and
+              creating useful, impactful tools. You can learn more about me through my
+              GitHub, LinkedIn, or by exploring the projects featured in this
+              portfolio. If you'd like to connect, feel free to reach out
+              through the contact page. 
             </p>
 
             {/* STATS */}
