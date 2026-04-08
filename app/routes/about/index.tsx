@@ -199,10 +199,10 @@ const AboutSection = () => {
               </div>
 
               <div className="border-t border-gray-800 pt-5">
-                {/* Credly Cert */}
+                {/* Credly Certificate */}
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <p className="text-sm font-semibold text-white">
-                    Programming Fundamentals
+                    Microcredential: Programming Fundamentals
                   </p>
                 </div>
                 <p className="text-xs text-teal-400 mb-1">
