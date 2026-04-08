@@ -1,6 +1,6 @@
 import type { Route } from "./+types/index";
 import type { Project, StrapiResponse, StrapiProject } from "~/types";
-import FeaturedProjects from "~/components/features-projects";
+import FeaturedProjects from "~/components/FeaturedProjects";
 
 export async function loader({
   request,
