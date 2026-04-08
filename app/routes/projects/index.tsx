@@ -6,7 +6,7 @@ import type { Project, StrapiProject, StrapiResponse } from "~/types";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Friendly Dev | Projects " },
+    { title: "Marisela | Projects " },
     { name: "description", content: "A collection of my personal projects" },
   ];
 }
