@@ -65,7 +65,7 @@ const AboutSection = () => {
       year: "2024",
       label: "B.S. Computer Science · Oregon State University",
       detail:
-        "Graduated with a 3.71 GPA - the deliberate leap into software after years of working with data.",
+        "Graduated with a 3.71 GPA while working full-time.",
       color: "bg-purple-500",
     },
     {
